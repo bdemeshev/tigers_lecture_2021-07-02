@@ -1,0 +1,160 @@
+\documentclass[12pt]{article} % размер шрифта
+
+\usepackage{tikz} % картинки в tikz
+\usepackage{microtype} % свешивание пунктуации
+
+\usepackage{array} % для столбцов фиксированной ширины
+
+\usepackage{url} % для вставки ссылок \url{...}
+
+\usepackage{indentfirst} % отступ в первом параграфе
+
+\usepackage{sectsty} % для центрирования названий частей
+\allsectionsfont{\centering} % приказываем центрировать все sections
+
+\usepackage{amsthm} % теоремы и доказательства
+
+\theoremstyle{definition} % прямой шрифт в условии теорем
+\newtheorem{theorem}{Теорема}[section]
+
+
+\usepackage{amsmath, amssymb} % куча стандартных математических плюшек
+
+\usepackage[top=2cm, left=1.5cm, right=1.5cm, bottom=2cm]{geometry} % размер текста на странице
+
+\usepackage{lastpage} % чтобы узнать номер последней страницы
+
+\usepackage{enumitem} % дополнительные плюшки для списков
+%  например \begin{enumerate}[resume] позволяет продолжить нумерацию в новом списке
+\usepackage{caption} % подписи к картинкам без плавающего окружения figure
+
+
+\usepackage{fancyhdr} % весёлые колонтитулы
+\pagestyle{fancy}
+\lhead{Тигры в вышке}
+\chead{}
+\rhead{2021-07-02}
+\lfoot{}
+\cfoot{}
+\rfoot{}
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\footrulewidth}{0.4pt}
+
+
+
+\usepackage{todonotes} % для вставки в документ заметок о том, что осталось сделать
+% \todo{Здесь надо коэффициенты исправить}
+% \missingfigure{Здесь будет картина Последний день Помпеи}
+% команда \listoftodos — печатает все поставленные \todo'шки
+
+\usepackage{booktabs} % красивые таблицы
+% заповеди из документации:
+% 1. Не используйте вертикальные линии
+% 2. Не используйте двойные линии
+% 3. Единицы измерения помещайте в шапку таблицы
+% 4. Не сокращайте .1 вместо 0.1
+% 5. Повторяющееся значение повторяйте, а не говорите "то же"
+
+\usepackage{fontspec} % поддержка разных шрифтов
+\usepackage{polyglossia} % поддержка разных языков
+
+\setmainlanguage{russian}
+\setotherlanguages{english}
+
+\setmainfont{Linux Libertine O} % выбираем шрифт
+% если Linux Libertine не установлен, то
+% можно также попробовать Helvetica, Arial, Cambria и т.Д.
+
+% чтобы использовать шрифт Linux Libertine на личном компе,
+% его надо предварительно скачать по ссылке
+% http://www.linuxlibertine.org/index.php?id=91&L=1
+
+% на сервисах типа sharelatex.com этот шрифт есть :)
+
+\newfontfamily{\cyrillicfonttt}{Linux Libertine O}
+% пояснение зачем нужно шаманство с \newfontfamily
+% http://tex.stackexchange.com/questions/91507/
+
+\AddEnumerateCounter{\asbuk}{\russian@alph}{щ} % для списков с русскими буквами
+\setenumerate[2]{label=\asbuk*)}
+
+%% эконометрические и вероятностные сокращения
+\DeclareMathOperator{\Cov}{Cov}
+\DeclareMathOperator{\Corr}{Corr}
+\DeclareMathOperator{\Var}{Var}
+\DeclareMathOperator{\E}{E}
+\DeclareMathOperator{\grad}{grad}
+\DeclareMathOperator{\plim}{plim}
+
+\newcommand \hb{\hat{\beta}}
+\newcommand \hs{\hat{\sigma}}
+\newcommand \htheta{\hat{\theta}}
+\newcommand \s{\sigma}
+\newcommand \hy{\hat{y}}
+\newcommand \hY{\hat{Y}}
+\newcommand \vunit{\vec{1}}
+\newcommand \e{\varepsilon}
+\newcommand \he{\hat{\e}}
+\newcommand \z{z}
+\newcommand \hVar{\widehat{\Var}}
+\newcommand \hCorr{\widehat{\Corr}}
+\newcommand \hCov{\widehat{\Cov}}
+\newcommand \cN{\mathcal{N}}
+\let\P\relax
+\DeclareMathOperator{\P}{P}
+
+
+
+
+\begin{document}
+
+
+\begin{enumerate}
+\item На острове живут 2021 тигр и одна вкусная волшебная антилопа.
+
+Если тигр съест волшебную антилопу, то он сам превратится в волшебную антилопу. 
+Мясо вол-
+шебной антилопы настолько вкусно, что любой тигр готов ради его вкуса на превращение в ан-
+тилопу. Но ни один тигр не готов полностью расстаться с жизнью ради мяса антилопы. 
+Тигры
+охотятся только в одиночку.
+
+Что будет происходить на этом острове?
+
+\item 
+
+\item Задача о банкротстве. Фирма банкрот должна трём должникам 100, 200 и 300 конфет. 
+Однако на счетах банкрота всего 200 конфет. 
+
+\begin{enumerate}
+  \item Опишите данную задачу как кооперативную игру. 
+  \item Найдите вектор Шепли.
+  \item Найдите нуклеолус. 
+\end{enumerate}
+
+\item Группа из $n$ гномов нашла много золотых слитков в пещере. Начинается обвал, поэтому нужно
+срочно убегать из пещеры. После обвала пещера окажется недоступной. Слитки золота тяжелы: в
+одиночку ни один гном не может нести слиток, но два гнома могут свободно нести один слиток.
+Снаружи пещеры слитки золота можно продать по цене 1 рубль за штуку.
+
+\begin{enumerate}
+  \item Найдите ядро и вектор Шепли для произвольного $n$;
+  \item Найдите нуклеолус.
+\end{enumerate}
+
+\item Разберитесь, насколько хорошо концепции из кооперативной теории игр 
+помогают определять вклад переменных в качество прогнозов. 
+
+У меня нет ни готового критерия для «хорошо», ни даже примерного представления о том, 
+как может выглядеть верный ответ. Раз вектор Шепли оказался полезен, то и другие 
+концепции могут «выстрелить» :)
+
+
+\end{enumerate}
+
+
+«Задачник для тигров»: \url{https://github.com/bdemeshev/games_pset}
+
+
+
+\end{document}
